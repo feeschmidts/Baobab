@@ -19,20 +19,20 @@ border: 8px solid rgb(255,255,254);
 -moz-box-shadow: 2px 2px 5px #888;
 -webkit-box-shadow: 2px 2px 5px #888;
 box-shadow: 2px 2px 5px #888;
--moz-transform: scale(0.98);
--webkit-transform: scale(0.98);
--o-transform: scale(0.98);
-transform: scale(0.98);
--ms-transform: scale(0.98);
-
-}
-
-.tiles:hover {
 -moz-transform: scale(1);
 -webkit-transform: scale(1);
 -o-transform: scale(1);
 transform: scale(1);
 -ms-transform: scale(1);
+
+}
+
+.tiles:hover {
+-moz-transform: scale(1.02);
+-webkit-transform: scale(1.02);
+-o-transform: scale(1.02);
+transform: scale(1.02);
+-ms-transform: scale(1.02);
  
 -webkit-transition: all .4s ease-out; 
 -moz-transition: all .4s ease-out; 
@@ -52,12 +52,25 @@ font-family: "Helvetica";
 font-size: 20px;
 }
 .tiles:hover .description {
+transition-delay: 0.2s;
+-moz-transition-delay: 0.2s; /* Firefox 4 */
+-webkit-transition-delay: 0.2s; /* Safari and Chrome */
+-o-transition-delay: 0.2s; /* Opera */
+-webkit-transition: all .2s ease-out; 
+-moz-transition: all .2s ease-out; 
+-o-transition: all .2s ease-out; 
+transition: all .2s ease-out;
 opacity: 1;
 }
 
 .tiles .description a {
 color: #FFF;
 text-decoration:none;
+-webkit-transition: all .4s ease-out; 
+-moz-transition: all .4s ease-out; 
+-o-transition: all .4s ease-out; 
+transition: all .4s ease-out;
+transform-style: preserve-3d;
 }
 
 .tiles:hover .overlay {
