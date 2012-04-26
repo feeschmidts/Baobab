@@ -90,6 +90,12 @@
 				'transitionIn'		: 'none',
 				'transitionOut'		: 'none'
 			});
+			
+			 $(document).ready(function () {
+				$('.overlay').click(function () {
+					$(this).siblings("a").trigger('click');
+				});
+			});
 		});
 		
 	</script>
@@ -104,9 +110,9 @@
 	<div class="tiles">
 		<div class="item">
 			<div class="overlay"></div>
-			<img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/>
+			<a rel="open" href="#30"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
 			<div class="description">
-				<h3><a rel="open" href="#30">Persian</a></h3>
+				<h3>Persian</h3>
 			</div>
 			<div style="display:none"><div id="30">
 				<img alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/>
