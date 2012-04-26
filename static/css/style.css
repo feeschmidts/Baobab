@@ -60,6 +60,19 @@ color: #FFF;
 text-decoration:none;
 }
 
+.tiles:hover .overlay {
+opacity:1;
+}
+
+.overlay {
+position:absolute;
+top:0;
+left:0;
+width:200px;
+height:200px;
+background-image:url('../images/overlay.png');
+opacity:0;
+}
 
 
 background {
