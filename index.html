@@ -4,9 +4,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<title>Under the Baobab</title>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>-->
 	<script>
-		!window.jQuery && document.write('<script src="jquery-1.7.2.min.js"><\/script>');
+		!window.jQuery && document.write('<script src="./static/fancybox/lib/jquery-1.7.2.min.js"><\/script>');
 	</script>
 	<script type="text/javascript" src="./static/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 	<script type="text/javascript" src="./static/fancybox/source/jquery.fancybox.js"></script>
@@ -18,7 +18,7 @@
 		$(document).ready(function() {
 		
 
-			$("a[rel=open]").fancybox({
+			/*$("a[rel=open]").fancybox({
 				'transitionIn'		: 'none',
 				'transitionOut'		: 'none',
 				'prevEffect'		: 'fade',
@@ -39,10 +39,31 @@
 					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
 				},
 								
-			});
+			});*/
 
 		
 			 $(document).ready(function () {
+				$('.tiles .item').each(function() {
+					var soundclip = $(this).data("soundclip");
+					$(this).find(".tile_image").click(function(){
+						$.fancybox.open($(this).find("a[rel=open]"), {
+							'prevEffect'		: 'fade',
+							'nextEffect'		: 'fade',
+							'titlePosition' 	: 'over',
+							'overlayColor'		: '#000',
+							'overlayOpacity'	: 0.8,
+							'helpers'			: {
+								soundcloud: {
+								position:"bottom"
+								},
+								title: {
+									type:'inside'
+								}
+							}
+						});
+					});
+				});
+				
 				$('.overlay').click(function () {
 					$(this).siblings("a").trigger('click');
 				});
@@ -59,9 +80,9 @@
 	<hr />
 
 	<div class="tiles">
-		<div class="item">
+		<div class="item" data-soundclip="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700">
 			<div class="overlay"></div>
-			<a rel="open" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
+			<a class="tile_image" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
 			<div class="description">
 				<h3>Persian</h3>
 			</div>
@@ -71,10 +92,9 @@
 					<param name="allowscriptaccess" value="always"></param>
 					<embed allowscriptaccess="always" height="81" src="'https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700" type="application/x-shockwave-flash" width="100"></embed>
 				</object>
-				<div class="gallery">
+				<div>
 					<!--<a rel="open" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img src="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" width="500" height="375" alt="The wrapping begins."></a>-->
 					<a rel="open" href="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" title="Building up the layers by Pirate Technics, on Flickr"><img src="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" width="500" height="375" alt="Building up the layers"></a>
-					<a class="gallery-hidden" src="./static/images/01_Saba/02_Saba.jpg"></a>
 				</div>
 			</div></div>
 		</div>
