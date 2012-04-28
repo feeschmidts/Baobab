@@ -1,0 +1,15 @@
+#fancybox-soundclip {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 8050;
+}
+
+#fancybox-soundclip.top {
+	top: 10px;
+}
+
+#fancybox-soundclip.bottom {
+	bottom: 0;
+	height: 80px;
+}
