@@ -88,8 +88,9 @@ opacity:0;
 }
 
 
-background {
-	img:
+.images {
+display: none;
+}
 
 h1 {
 	margin: 30px 0 15px 0;

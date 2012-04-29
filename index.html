@@ -44,9 +44,10 @@
 		
 			 $(document).ready(function () {
 				$('.tiles .item').each(function() {
-					var soundclip = $(this).data("soundclip");
-					$(this).find(".tile_image").click(function(){
-						$.fancybox.open($(this).find("a[rel=open]"), {
+					var self = $(this);
+					var soundclip = self.data("soundclip");
+					self.find(".tile_image").click(function(){
+						$.fancybox.open(self.find("a[rel=open]"), {
 							'prevEffect'		: 'fade',
 							'nextEffect'		: 'fade',
 							'titlePosition' 	: 'over',
@@ -54,7 +55,8 @@
 							'overlayOpacity'	: 0.8,
 							'helpers'			: {
 								soundcloud: {
-								position:"bottom"
+									position:"bottom",
+									soundclip: soundclip
 								},
 								title: {
 									type:'inside'
@@ -62,11 +64,13 @@
 							}
 						});
 					});
+					self.find(".overlay").on("click", function () {
+						console.log("clicked");
+						self.find("a.tile_image").trigger('click');
+					});
 				});
 				
-				$('.overlay').click(function () {
-					$(this).siblings("a").trigger('click');
-				});
+				
 			});
 		});
 		
@@ -81,22 +85,16 @@
 
 	<div class="tiles">
 		<div class="item" data-soundclip="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700">
-			<div class="overlay"></div>
-			<a class="tile_image" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
-			<div class="description">
-				<h3>Persian</h3>
-			</div>
-			<div style="display:none"><div id="30">
-				<object height="81" width="100%">
-					<param name="movie" value="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700"></param>
-					<param name="allowscriptaccess" value="always"></param>
-					<embed allowscriptaccess="always" height="81" src="'https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700" type="application/x-shockwave-flash" width="100"></embed>
-				</object>
-				<div>
-					<!--<a rel="open" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img src="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" width="500" height="375" alt="The wrapping begins."></a>-->
-					<a rel="open" href="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" title="Building up the layers by Pirate Technics, on Flickr"><img src="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" width="500" height="375" alt="Building up the layers"></a>
+			<div class="overlay">
+				<div class="description">
+					<h3>Persian</h3>
 				</div>
-			</div></div>
+			</div>
+			<a class="tile_image" href="#" title="The wrapping begins. by Pirate Technics, on Flickr"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
+			<div class="images">
+				<a rel="open" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img src="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" width="500" height="375" alt="The wrapping begins."></a>
+				<a rel="open" href="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" title="Building up the layers by Pirate Technics, on Flickr"><img src="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" width="500" height="375" alt="Building up the layers"></a>
+			</div>
 		</div>
 		
 		<!-- more items here --> 
