@@ -18,9 +18,11 @@
 		 $(document).ready(function () {
 			$('.tiles .item').each(function() {
 				var self = $(this);
+				var group = self.find(".gallery-item");
 				var soundclip = self.data("soundclip");
 				self.find(".tile_image").click(function(){
-					$.fancybox.open(self.find("a[rel=open]"), {
+					$.fancybox.open(group, {
+						'type'				: 'inline',
 						'prevEffect'		: 'fade',
 						'nextEffect'		: 'fade',
 						'titlePosition' 	: 'over',
@@ -51,22 +53,56 @@
 
 	<hr />
 
-	<div class="tiles">
-		<div class="item" data-soundclip="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700">
+	<div class="tiles cf">
+		<div class="item" data-soundclip="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F44735885&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700">
 			<div class="overlay">
 				<div class="description">
-					<h3>Persian</h3>
+					<h3>Fast fashion</h3>
 				</div>
+				
 			</div>
-			<a class="tile_image" href="#" title="The wrapping begins. by Pirate Technics, on Flickr"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
+			<a class="tile_image" href="#"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
 			<div class="images">
-				<a rel="open" href="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" title="The wrapping begins. by Pirate Technics, on Flickr"><img src="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" width="500" height="375" alt="The wrapping begins."></a>
-				<a rel="open" href="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" title="Building up the layers by Pirate Technics, on Flickr"><img src="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" width="500" height="375" alt="Building up the layers"></a>
+				<!--Fabric Drape-->
+				<div class="gallery-item">
+					<img src="http://farm8.staticflickr.com/7228/6978436090_d01d7bc5af_z.jpg" width="425" height="640" alt="Fabric description">
+					<div class="fancybox-title fancybox-title-inside-wrap">Saba Rahbar - Under the Baobab <a href="http://www.flickr.com/photos/79496744@N04/6978436090/">on Flickr</a></div>
+				</div>
+								
+				<!--Large Tile Detail-->
+				<div class="gallery-item">
+					<img src="http://farm9.staticflickr.com/8022/7124524263_5e0ee87538_z.jpg" width="640" height="425" alt="Detail.">
+					<div class="fancybox-title fancybox-title-inside-wrap">Under the Baobab, <a href="http://www.flickr.com/photos/79496744@N04/7124524263/">on Flickr</a></div>
+				</div>
+				
+				<!--Portrait-->
+				<div class="gallery-item">
+					<img src="http://farm8.staticflickr.com/7110/6978436636_790083f3eb_z.jpg" width="640" height="425" alt="Saba Rahbar Portrait">
+					<div class="fancybox-title fancybox-title-inside-wrap">Saba Rahbar - Under the Baobab <a href="http://www.flickr.com/photos/79496744@N04/6978436636">on Flickr</a></div>
+				</div>
 			</div>
 		</div>
 		
 		<!-- more items here --> 
 		
+		<div class="item" data-soundclip="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F43814758&amp;show_comments=true&amp;auto_play=false&amp;color=ff7700">
+			<div class="overlay">
+				<div class="description">
+					<h3>Korean</h3>
+				</div>
+			</div>
+			<a class="tile_image" href="#"><img title="Persian" alt="Persion motif fabric" src="./static/images/tiles/01.jpg"/></a>
+			<div class="images">
+				<div class="gallery-item">
+					<img src="http://farm8.staticflickr.com/7225/6965969818_61ab9c4fe8.jpg" width="500" height="375" alt="The wrapping begins.">
+					<div class="fancybox-title fancybox-title-inside-wrap">The wrapping begins. by Pirate Technics, <a href="#">on Flickr</a></div>
+				</div>
+				<div class="gallery-item">
+					<img src="http://farm6.staticflickr.com/5079/7112047619_857f79f617.jpg" width="500" height="375" alt="Building up the layers">
+					<div class="fancybox-title fancybox-title-inside-wrap">Building up the layers by Pirate Technics, <a href="#">on Flickr</a></div>
+				</div>
+			</div>
+		</div>
 	</div>
 		
 		
