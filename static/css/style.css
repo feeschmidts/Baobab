@@ -40,7 +40,6 @@ position: absolute;
 top: 60px;
 width: 200px;
 text-align: center;
-font-family: "Helvetica";
 font-size: 20px;
 }
 .tiles .item:hover .description {
