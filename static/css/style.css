@@ -4,6 +4,10 @@
 	margin: auto;
 }
 
+.tiles {
+margin-right: 200px;
+}
+
 .tiles .item {
 position: relative;
 float: left;
@@ -83,7 +87,9 @@ p {
 }
 
 .about {
-	margin: 30px 30px 15px 0;
+	padding: 10px 10px 0 10px;
+	width: 180px;
+	float: right;
 }
 
 h3 {
