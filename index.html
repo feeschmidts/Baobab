@@ -16,37 +16,6 @@
  	<link rel="stylesheet" href="./static/css/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-	<script type="text/javascript">
-		 $(document).ready(function () {
-			$('.tiles .item').each(function() {
-				var self = $(this);
-				var group = self.find(".gallery-item");
-				var soundclip = self.data("soundclip");
-				self.find(".tile_image").click(function(){
-					$.fancybox.open(group, {
-						'type'				: 'inline',
-						'prevEffect'		: 'fade',
-						'nextEffect'		: 'fade',
-						'titlePosition' 	: 'over',
-						'overlayColor'		: '#000',
-						'overlayOpacity'	: 0.8,
-						'helpers'			: {
-							soundcloud: {
-								position:"bottom",
-								soundclip: soundclip
-							},
-							title: {
-								type:'inside'
-							}
-						}
-					});
-				});
-				self.find(".overlay").on("click", function () {
-					self.find("a.tile_image").trigger('click');
-				});
-			});
-		});
-	</script>
 </head>
 <body>
 <div id="content cf">
@@ -1442,8 +1411,37 @@
 	</div>
 -->
 </div>	
+<script type="text/javascript">
+		 $(document).ready(function () {
+			$('.tiles .item').each(function() {
+				var self = $(this);
+				var group = self.find(".gallery-item");
+				var soundclip = self.data("soundclip");
+				self.find(".tile_image").click(function(){
+					$.fancybox.open(group, {
+						'type'				: 'inline',
+						'prevEffect'		: 'fade',
+						'nextEffect'		: 'fade',
+						'titlePosition' 	: 'over',
+						'overlayColor'		: '#000',
+						'overlayOpacity'	: 0.8,
+						'helpers'			: {
+							soundcloud: {
+								position:"bottom",
+								soundclip: soundclip
+							},
+							title: {
+								type:'inside'
+							}
+						}
+					});
+				});
+				self.find(".overlay").on("click", function () {
+					self.find("a.tile_image").trigger('click');
+				});
+			});
+		});
+	</script>
+
 </body>
-<footer> 
-	
- </footer>
 </html>
