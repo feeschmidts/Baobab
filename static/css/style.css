@@ -25,8 +25,6 @@ transform: scale(1);
 -o-transform: scale(1.02);
 transform: scale(1.02);
 -ms-transform: scale(1.02);
- 
-
 }
 
 .tiles .description {
@@ -80,6 +78,14 @@ display: none;
     zoom:1;
 }
 
+p {
+	font-family: 'Dosis', sans-serif;
+}
+
+.about {
+	margin: 30px 30px 15px 0;
+}
+
 h3 {
 	margin: 30px 0 15px 0;
 	font-size: 30px;
@@ -104,11 +110,6 @@ hr {
 	background: #E5E5E5;
 	margin-bottom: 20px;
 	padding: 0;
-}
-
-p {
-	margin: auto;
-	padding: 7px 0;
 }
 
 a {
