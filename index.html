@@ -1417,6 +1417,17 @@
 				var self = $(this);
 				var group = self.find(".gallery-item");
 				var soundclip = self.data("soundclip");
+				var helpers = {
+					title: {
+						type:'inside'
+					}
+				}
+				if (soundclip) {
+					helpers.soundcloud = {
+						position:"bottom",
+						soundclip: soundclip
+					};
+				}
 				self.find(".tile_image").click(function(){
 					$.fancybox.open(group, {
 						'type'				: 'inline',
@@ -1425,15 +1436,7 @@
 						'titlePosition' 	: 'over',
 						'overlayColor'		: '#000',
 						'overlayOpacity'	: 0.8,
-						'helpers'			: {
-							soundcloud: {
-								position:"bottom",
-								soundclip: soundclip
-							},
-							title: {
-								type:'inside'
-							}
-						}
+						'helpers'			: helpers
 					});
 				});
 				self.find(".overlay").on("click", function () {
