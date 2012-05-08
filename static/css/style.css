@@ -86,6 +86,12 @@ p {
 	font-family: 'Dosis', sans-serif;
 }
 
+.fancybox-title {
+	font-family: 'Dosis', sans-serif;
+	font-size: 15px;
+	width: 425px;
+}
+
 .action {
 font-family: 'Chau Philomene One', sans-serif;
 font-size: 25px;
