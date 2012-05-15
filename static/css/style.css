@@ -115,7 +115,7 @@ h3 {
 	font-size: 30px;
 	font-weight: bold;
 	font-family: 'Oleo Script', cursive;
-	
+}	
 h1 {
 	margin: 30px 0 15px 0;
 	font-size: 30px;
@@ -137,9 +137,23 @@ hr {
 }
 
 a {
-	outline: none;
-}
+text-decoration:none;
+	}
 
+a:link {
+	text-decoration:none;
+	}
+a:visited {
+	text-decoration:none;
+	
+	}
+a:hover {
+	text-decoration:none;
+}
+a:active {
+	text-decoration:none;
+
+}
 
 ul {
 	margin-bottom: 24px;

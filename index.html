@@ -2123,6 +2123,11 @@
 </footer>
 <script type="text/javascript">
 		 $(document).ready(function () {
+			var divs = $('.tiles .item').slice(1).get().sort(function(){ 
+				return Math.round(Math.random())-0.5; //random so we get the right +/- combo
+			})
+			$('.tiles').append(divs).show();
+			
 			$('.tiles .item').each(function() {
 				var self = $(this);
 				var group = self.find(".gallery-item");
